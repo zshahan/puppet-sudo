@@ -1,6 +1,5 @@
 define sudo::rule (
   $who,
-  $ensure = present,
   $commands = 'ALL',
   $servers = 'ALL',
   $comment = '',
@@ -10,7 +9,6 @@ define sudo::rule (
 ) {
 
   sudo::register{"rule_${name}":
-    ensure  => $ensure,
     content => template('sudo/rule.erb'),
     order   => 30,
   }
