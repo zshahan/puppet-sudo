@@ -17,7 +17,6 @@ class sudo::config {
     mode  => '0440',
   }
   sudo::register{ 'sudo_header':
-    ensure  => present,
     content => template('sudo/sudoers.erb'),
     order   => 10,
   }
