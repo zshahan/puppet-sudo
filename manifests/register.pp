@@ -1,5 +1,4 @@
 define sudo::register(
-  $ensure = present,
   $content = '',
   $order = 20
 ) {
@@ -7,7 +6,6 @@ define sudo::register(
   include ::sudo
 
   concat::fragment{"sudo_fragment_${name}":
-    ensure  => $ensure,
     target  => $sudo::rulesfile,
     content => $content,
     order   => $order,
